@@ -18,6 +18,7 @@ pipeline {
 		sh '/usr/bin/coverage-3.6 run -m pytest'
 		sh '/usr/bin/coverage-3.6 report'
 	   }
+        }
 	stage('echo'){
 	   steps {
 		echo "hello!"
