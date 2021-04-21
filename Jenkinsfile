@@ -9,7 +9,7 @@ pipeline {
 	
      stages {
                
-	stage('InstallVenv'){
+	stage('PyTests'){
 	   steps {
 		sh 'python3 -m venv venv' 
 		sh '. venv/bin/activate'
