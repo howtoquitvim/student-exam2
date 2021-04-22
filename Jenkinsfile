@@ -1,4 +1,7 @@
 pipeline {
+  environment {
+    imagename = "epamexam"
+  }
   agent { 
     label 'JenkAgent' 
   }
@@ -17,8 +20,12 @@ pipeline {
    	sh "pip3 install --user -e '.[test]'"
    	sh '/usr/bin/coverage-3.6 run -m pytest'
    	sh '/usr/bin/coverage-3.6 report'
-        sh 'docker build -t calc ./'
       }
+    stage('Build image'){
+      steps {
+        script {
+          dockerImage = docker.build epamexam
+        }
     }
   }
 }
