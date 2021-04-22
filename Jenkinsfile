@@ -17,7 +17,6 @@ pipeline {
    	sh "pip3 install --user -e '.[test]'"
    	sh '/usr/bin/coverage-3.6 run -m pytest'
    	sh '/usr/bin/coverage-3.6 report'
-        sh ' /usr/sbin/usermod -a -G docker Jenkins'
         sh './build.sh'
       }
     }
