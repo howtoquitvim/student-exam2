@@ -25,7 +25,7 @@ pipeline {
     stage('Build image'){
       steps {
         script {
-          dockerImage = docker.build epamexam
+          dockerImage = docker.build imagename
         }
       }
     }
