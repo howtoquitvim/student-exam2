@@ -9,7 +9,7 @@ pipeline {
      
   stages {
             
-    stage('PyTests'){
+    stage('PyTests&ImgBuild') {
       steps {
    	/*sh 'python3 -m venv venv' 
    	sh '. venv/bin/activate'
@@ -17,7 +17,7 @@ pipeline {
    	sh "pip3 install --user -e '.[test]'"
    	sh '/usr/bin/coverage-3.6 run -m pytest'
    	sh '/usr/bin/coverage-3.6 report'
-        sh './build.sh'
+        sh 'docker build -t calc ./'
       }
     }
   }
