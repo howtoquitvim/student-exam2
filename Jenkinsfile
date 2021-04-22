@@ -29,5 +29,14 @@ pipeline {
         }
       }
     }
+    stage('image push') {
+      steps {
+        script {
+          docker.withRegistry('', 'imagepush'){
+            dockerImage.push('latest')
+          }
+        }
+      }
+    } 
   }
 }
