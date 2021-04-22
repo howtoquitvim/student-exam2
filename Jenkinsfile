@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    imagename = "epamexam"
+    imagename = "fateevilia/epamexam"
   }
   agent { 
     label 'JenkAgent' 
