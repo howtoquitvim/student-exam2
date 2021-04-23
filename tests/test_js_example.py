@@ -18,7 +18,7 @@ def test_index(app, client, path, template_name):
 
 
 @pytest.mark.parametrize(('a', 'b', 'result'), (
-    (2, 3, 5),
+    (2, 3, 6),
     (2.5, 3, 5.5),
     (2, None, 2),
     (2, 'b', 2),
